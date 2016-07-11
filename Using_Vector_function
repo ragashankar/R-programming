@@ -25,7 +25,7 @@
 > E
 [1] "bz"   "TRUE" # Gives out char values where "TRUE" is represented as a character
 -------------------------------------------------------------------------------------------------------------------------
-# Explicit Coercion
+# Explicit Coercion - 1
 
 > x <- 0.6
 > x
@@ -36,8 +36,20 @@
 [1] "0.6"
 > as.logical(x)
 [1] TRUE
+--------------------------------------------------------------------------------------------------------------------------
+# Explicit Coercion - 2
+> S <- TRUE
+> class(S)
+[1] "logical"
+> as.numeric(S)
+[1] 1
+> as.character(S)
+[1] "TRUE"
+> as.complex(S)
+[1] 1+0i
+
 ---------------------------------------------------------------------------------------------------------------------------
-# Explict Coercion non usage
+# Explict Coercion -  non usage
 > y <- c("a","b","c")
 > y
 [1] "a" "b" "c"
