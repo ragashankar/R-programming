@@ -11,3 +11,14 @@
 > t
 [1] FALSE FALSE FALSE FALSE
 --------------------------------
+> v <- c("a",1.7)
+> v
+[1] "a"   "1.7"  # Gives out a string of 'a' and 1.7(also a string) bcoz char is the least common denominator of the two
+--------------------------------------------------------------------------------------------------------------------------
+> w <- c(TRUE,98)
+> w
+[1]  1 98 # Gives 1 for TRUE and 0 for FALSE when coereced with an integer (98)
+-------------------------------------------------------------------------------------------------------------------------
+> E <- c("bz",TRUE)
+> E
+[1] "bz"   "TRUE" # Gives out char values where "TRUE" is represented as a character
