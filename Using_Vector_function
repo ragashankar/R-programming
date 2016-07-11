@@ -36,5 +36,19 @@
 [1] "0.6"
 > as.logical(x)
 [1] TRUE
-
+---------------------------------------------------------------------------------------------------------------------------
+# Explict Coercion non usage
+> y <- c("a","b","c")
+> y
+[1] "a" "b" "c"
+> as.numeric(y)
+[1] NA NA NA
+Warning message:
+NAs introduced by coercion 
+> as.logical(y)
+[1] NA NA NA
+> as.complex(y)
+[1] NA NA NA
+Warning message:
+NAs introduced by coercion 
 
