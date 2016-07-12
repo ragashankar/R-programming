@@ -1,0 +1,7 @@
+> df <- data.frame(houses = c('starks','lannis','baratheon','Targy') , names = 1:4)
+> df
+     houses names
+1    starks     1
+2    lannis     2
+3 baratheon     3
+4     Targy     4
