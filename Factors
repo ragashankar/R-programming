@@ -1,0 +1,13 @@
+# Factors creation
+> x <- factor(c("yes","no","yes","yes","no","no"),
+levels=c("yes","no")) # levels argument tells the baseline level first :yes and second :no ; 
+                        if no level is specified then the baseline level will be taken in alphabetical order
+> x
+[1] yes no  yes yes no  no 
+Levels: yes no
+------------------
+> unclass(x) # shows the underneath classifcaton of yes and no as 1 and 2 (integers)
+[1] 1 2 1 1 2 2
+attr(,"levels")
+[1] "yes" "no" 
+-----------------
