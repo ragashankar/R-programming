@@ -1,0 +1,14 @@
+> a <- c(1,2,3,NA,4,5)
+> is.na(a)
+[1] FALSE FALSE FALSE  TRUE FALSE FALSE
+
+> b <- c(6,7,8,NaN,9,10)
+> is.nan(b)
+[1] FALSE FALSE FALSE  TRUE FALSE FALSE
+
+> c <- c(11,12,13,NA,NaN,15)
+> is.na(c)
+[1] FALSE FALSE FALSE  TRUE  TRUE FALSE
+
+> is.nan(c)
+[1] FALSE FALSE FALSE FALSE  TRUE FALSE
