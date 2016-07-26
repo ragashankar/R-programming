@@ -1,0 +1,7 @@
+getwd() # Path of working directory
+
+read.csv(File name in the wrking directory) # Reads csv files
+
+read.table(File name in the wrking directory) # Read files in tab format
+
+readLines(Textfile) # reads text file
