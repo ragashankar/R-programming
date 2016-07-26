@@ -1,0 +1,35 @@
+# dump() and source()
+> p <- 1:4
+> o <- 1:10
+> dump(c("p","o"),file='test1.R') # test1.R file is created in wrking dir
+> rm(p,o) # p and o vectors are removed
+> source('test1.R') # p and o values are read from test1.R
+
+----------------------------------------------------------------------------------------------------------------
+# dput() and dget()
+> d <- data.frame(foo=1:4,bar=c('a','b','c','d'))
+> d
+  foo bar
+1   1   a
+2   2   b
+3   3   c
+4   4   d
+> row.names(d) <- c('ob1','ob2','ob3','ob4')
+> d
+    foo bar
+ob1   1   a
+ob2   2   b
+ob3   3   c
+ob4   4   d
+> dput(d)
+structure(list(foo = 1:4, bar = structure(1:4, .Label = c("a", 
+"b", "c", "d"), class = "factor")), .Names = c("foo", "bar"), row.names = c("ob1", 
+"ob2", "ob3", "ob4"), class = "data.frame")
+> dput(d,'test2.R') # Can take only one variable
+> d1 <- dget('test2.R')
+> d1
+    foo bar
+ob1   1   a
+ob2   2   b
+ob3   3   c
+ob4   4   d
