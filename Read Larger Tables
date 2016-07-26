@@ -1,0 +1,11 @@
+# Finding the class for each column for faster processing in larger data sets
+
+> data <- read.csv("Type_Count_allyears.csv",nrows=100) # Reading limited rows, memory usage
+> classes <- sapply(data,class)
+> classes
+  Type_11    Cnt_11   Type_12    Cnt_12   Type_13    Cnt_13   Type_14    Cnt_14   Type_15    Cnt_15 
+ "factor" "integer"  "factor" "integer"  "factor" "integer"  "factor" "integer"  "factor" "integer" 
+> data_class <- read.csv("Type_Count_allyears.csv",colClasses=classes)
+> data_class
+
+-------------------------------------------------------------------------------------------------------------------
