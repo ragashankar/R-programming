@@ -1,0 +1,15 @@
+# Reading file 
+> con <- file("C:/Users/Raghavendran/Desktop/data/spss dataset.csv")
+> rd <- readLines(con,10)
+> rd
+> rd1 <- read.csv(con)
+> data3 <- data.frame(rd1)
+> head(data3)
+>tail(data3)
+
+------------------------------------------
+# Reading url
+> install.packages("RCurl")
+> library("RCurl")
+> con <- url("https://www.google.com")
+> con
