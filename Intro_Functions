@@ -1,0 +1,7 @@
+Functions: Basic black box
+
+Input -> Box -> output
+Where BOX is the processing stage
+
+1. Func takes default argument if not specified anyting
+2. If there is no default arg, it throws an error
