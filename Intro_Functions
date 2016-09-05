@@ -5,3 +5,10 @@ Where BOX is the processing stage
 
 1. Func takes default argument if not specified anyting
 2. If there is no default arg, it throws an error
+
+-----------------------------------------------------------------------------
+sd()
+sd(x,na.rm=FALSE) # By default na.rm is false as it does not remove na values. If set to TRUE, then removes na
+-------------------------------------------------------------------------
+mean()
+mean(y,trim=0,na.rm=FALSE) # By default trim=0, if trim is not 0 (say 0.2), it chops of that decimal places
