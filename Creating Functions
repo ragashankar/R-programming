@@ -1,0 +1,32 @@
+1. To compute triple of a number
+triple <- function(a){
+3*a
+}
+
+or
+
+triple <- function(a)
+{
+b <- 3*a
+return(b)
+}
+
+2. To compute math_logic
+
+math_logic <- function(x,y){
+z <- x*y + x/y
+print(z)
+
+3. Optional arg usage
+
+arith_fun <- function(i,j){
+k <- i+1             
+return(k)                    # Will throw an error, since j is not used ,  so we've to make it as an optional argument.
+}  
+
+Soln:
+
+arith_fun <- function(i,j=3){
+k <- i+1
+return(k)
+}
