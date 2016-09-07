@@ -30,3 +30,28 @@ arith_fun <- function(i,j=3){
 k <- i+1
 return(k)
 }
+-------------------------------------------------------------------
+creating advanced functions:
+
+# Define the interpret function
+interpret <- function(num_views) {
+  if (num_views > 15) {
+print("You're popular!")
+return(num_views)
+  } else {
+print("Try to be more visible!")
+return(0)
+  }
+}
+
+# Call the interpret function twice
+
+interpret(linkedin[1])   # linked values are 16  9 13  5  2 17 14
+
+[1] "You're popular!"
+[1] 16
+
+interpret(facebook[2])   # facebook values are 17  7  5 16  8 13 14
+
+[1] "Try to be more visible!"
+[1] 0
