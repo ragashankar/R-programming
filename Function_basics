@@ -1,0 +1,46 @@
+Function with no arguments
+
+1. Creating function:
+throw_dice <- function() {
+  number <- sample(1:6, size = 1)
+  number
+}
+
+Calling a function:
+throw_dice()
+
+
+2. Create a hello function with no args which prints out "Hi there!" and returns TRUE. Call it
+
+hello <- function(){
+print(paste("Hi there!"))
+return(TRUE)
+}
+
+hello()
+
+---------------------------------------------------------
+Specifying default value to the argument
+
+pow_two <- function(x,print_info = TRUE) {
+  y <- x ^ 2
+  if(print_info == TRUE){
+     print(paste(x, "to the power two equals", y))  
+  }
+ 
+  return(y)
+}
+
+Outputs:
+> pow_two(5)
+[1] "5 to the power two equals 25"
+[1] 25
+> pow_two(5,TRUE)
+[1] "5 to the power two equals 25"
+[1] 25
+> pow_two(5,FALSE)
+[1] 25
+
+
+---------------------------------------------------------------
+
