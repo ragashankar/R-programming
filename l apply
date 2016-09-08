@@ -1,0 +1,55 @@
+lapply:
+1. Instead of for loop used as an iteration, we can use lapply function
+2. lapply always gives the result as lists irrespective of the input data structure
+3. We can use unlist() function to return the o/p of lapply as vector
+
+GOT <- c("starks","Targy","lannis","baratheon","wildlings","camerons")
+ Using for loop :
+ for (ch in 1:length(GOT)){
+        print (nchar(GOT[ch]))
+}
+
+Using lapply :
+lapply(GOT,nchar) # prints as lists
+unlist(lapply(GOT,nchar) # prints as vectors
+--------------------------------------------------------------------------------------------------------
+lapply with anonymous functions
+
+# Definition of split_low
+pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
+split <- strsplit(pioneers, split = ":")
+split_low <- lapply(split, tolower)
+
+# Transform: use anonymous function inside lapply
+
+names <- lapply(split_low, function(x){x[1]})
+
+# Transform: use anonymous function inside lapply
+
+years <- lapply(split_low, function(y){y[2]})
+
+--------------------------------------------------------------------------------------------------------------
+lapply with functions
+
+# Code from previous exercise:
+pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
+split <- strsplit(pioneers, split = ":")
+split_low <- lapply(split, tolower)
+
+# Write function select_first()
+select_first <- function(x) {
+  x[1]
+}
+
+# Apply select_first() over split_low: names
+
+names <- lapply(split_low,select_first)
+# Write function select_second()
+select_second <- function(y){
+    y[2]
+}
+
+
+
+# Apply select_second() over split_low: years
+years <- lapply(split_low,select_second)
