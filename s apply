@@ -43,6 +43,68 @@ sapply(temp,min)
 
 # Use lapply() to find each day's maximum temperature
 lapply(temp,max)
+--------------------------------------------------------------------------------------------------------------------------------
 
+2. To find the average of min and max in each list of temp - Here fn reurns only one value, s apply simplifies
+
+# temp is already defined in the workspace
+
+# Finish function definition of extremes_avg
+extremes_avg <- function(x) {
+  ( min(x) + max(x) ) / 2
+}
+
+# Apply extremes_avg() over temp using sapply()
+sapply(temp,extremes_avg)
+
+# Apply extremes_avg() over temp using lapply()
+lapply(temp,extremes_avg)
 # Use sapply() to find each day's maximum temperature
 sapply(temp,max)
+-------------------------------------------------------------------------------------------------------------------------
+3. To find the min and max in each list of temp - Here fn returns more than one value, so s apply cannot simplify  -returns rows and columns
+
+# temp is already available in the workspace
+
+# Create a function that returns min and max of a vector: extremes
+extremes <- function(x) {
+  c(min = min(x), max = max(x))
+}
+
+# Apply extremes() over temp with sapply()
+sapply(temp,extremes)
+
+    [,1] [,2] [,3] [,4] [,5] [,6] [,7]
+min   -1    5   -3   -2    2   -3    1
+max    9   13    8    7    9    9    9
+
+# Apply extremes() over temp with lapply()
+lapply(temp,extremes)
+
+[[1]]
+min max 
+ -1   9 
+
+[[2]]
+min max 
+  5  13 
+
+[[3]]
+min max 
+ -3   8 
+
+[[4]]
+min max 
+ -2   7 
+
+[[5]]
+min max 
+  2   9 
+
+[[6]]
+min max 
+ -3   9 
+
+[[7]]
+min max 
+  1   9 
