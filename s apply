@@ -1,0 +1,4 @@
+s apply : 
+1. l apply returns a list since the input given to it is a list or vector, where list input contains various data types
+2. But if the i/p contains same datatype, we dont necessarily have to have a list ouput by using l apply. For that we use s apply
+3. s apply calls l apply and then returns a vector ( if there is any homogenous content)
