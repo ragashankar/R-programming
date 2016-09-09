@@ -8,7 +8,7 @@ Patterns are described here as they would be printed by cat: (do remember that b
 
 Long regular expressions may or may not be accepted: the POSIX standard only requires up to 256 bytes.
 
-grep() :
+grep() : Returns indices/posistion of the char in the vector.
 
 GOT <- c("starks","Targy","lannis","baratheon","wildlings","camerons")
 
@@ -25,3 +25,7 @@ grep("a",GOT,invert=T) # Gives the pos of chars which does not contain "a"
 grep("n",GOT,value = T) # Gives the characters
 
 grep("n",GOT,fixed=T) # Gives the pos of chars with exact matching
+
+grepl() :
+
+Sames as grep() but returns logical.
