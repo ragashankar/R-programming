@@ -1,0 +1,8 @@
+GOT
+[1] "starks"    "Targy"     "lannis"    "baratheon" "wildlings" "camerons"
+
+sub(pattern="i",GOT,replacement = "o") # Replace the first i with o. The next and following i's is not replaced.
+[1] "starks"    "Targy"     "lannos"    "baratheon" "woldlings" "camerons"
+
+gsub(pattern="i",GOT,replacement = "o") # Replace all i's with o's
+[1] "starks"    "Targy"     "lannos"    "baratheon" "woldlongs" "camerons"
