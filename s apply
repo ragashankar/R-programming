@@ -5,6 +5,7 @@ s apply :
 4. s apply automatically assigns the names to the output that has been specified in the input vector/list.
 
 Cases of s apply where simplifaction not possible/useless:
+1. s apply does not simplify to vectors when the function returns values of more than length 1.
 List of vectors containing unique_letters using n_char func. Gives same output as l apply. If simpli did not work, then it returns a list same as l apply
 To overcome this, v apply is used
 -----------------------------------------------------------------------------------------------------------------------------------------
