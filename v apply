@@ -1,0 +1,34 @@
+V apply wants us to specify what type and length that we want to output. v apply is safer than s apply since it atleasts asks us to 
+specify the FUN.VALUE.
+1. ----------------------------------------------------------------------------------------------
+> temp
+[[1]]
+[1]  3  7  9  6 -1
+
+[[2]]
+[1]  6  9 12 13  5
+
+[[3]]
+[1]  4  8  3 -1 -3
+
+[[4]]
+[1]  1  4  7  2 -2
+
+[[5]]
+[1] 5 7 9 4 2
+
+[[6]]
+[1] -3  5  8  9  4
+
+[[7]]
+[1] 3 6 9 4 1
+
+# temp is already available in the workspace
+
+# Definition of basics()
+basics <- function(x) {
+  c(min = min(x), mean = mean(x), max = max(x))
+}
+
+# Apply basics() over temp using vapply()
+vapply(temp,basics,numeric(3))   # Returns a numeric with length 3 (min,mean,max)
