@@ -1,0 +1,27 @@
+?regex - documentation on regu exp.
+
+Details: A ‘regular expression’ is a pattern that describes a set of strings. Two types of regular expressions are used in R, extended regular expressions (the default) and Perl-like regular expressions used by perl = TRUE. There is a also fixed = TRUE which can be considered to use a literal regular expression.
+
+Other functions which use regular expressions (often via the use of grep) include apropos, browseEnv, help.search, list.files and ls. These will all use extended regular expressions.
+
+Patterns are described here as they would be printed by cat: (do remember that backslashes need to be doubled when entering R character strings, e.g. from the keyboard).
+
+Long regular expressions may or may not be accepted: the POSIX standard only requires up to 256 bytes.
+
+grep() :
+
+GOT <- c("starks","Targy","lannis","baratheon","wildlings","camerons")
+
+grep(pattern = "l",x=GOT) # gives the position of chars which contains "l"
+
+grep(pattern = "^s",x=GOT) # Gives the pos of chars which starts with "s"
+
+grep(pattern = "s$",GOT) # Gives the pos of chars which ends with "s"
+
+grep("^t",GOT,ignore.case = T) # Ignore the upper/lower case and returns the result
+
+grep("a",GOT,invert=T) # Gives the pos of chars which does not contain "a"
+
+grep("n",GOT,value = T) # Gives the characters
+
+grep("n",GOT,fixed=T) # Gives the pos of chars with exact matching
