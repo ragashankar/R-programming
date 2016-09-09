@@ -6,3 +6,7 @@ sub(pattern="i",GOT,replacement = "o") # Replace the first i with o. The next an
 
 gsub(pattern="i",GOT,replacement = "o") # Replace all i's with o's
 [1] "starks"    "Targy"     "lannos"    "baratheon" "woldlongs" "camerons"
+
+
+gsub(pattern="n|e",GOT,replacement = "p") # Replaces all the "n"s or "e"'s with "p"s.
+[1] "starks"    "Targy"     "lappis"    "barathpop" "wildlipgs" "camprops"
