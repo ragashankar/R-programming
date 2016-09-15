@@ -78,3 +78,16 @@ if (mean(my_class) < 75) {
     print("smart year, but I am smarter")
   }
 }
+------------------------------------------------------------------------------------------------------------
+# me, my_class and last_5 are preloaded
+
+# Create top_grades
+top_grades <- my_class[my_class >= 85]
+
+# Create worst_grades
+worst_grades <- my_class[my_class < 65]
+
+# Write conditional statement
+if(length(top_grades) > length(worst_grades)){
+    print("top grades prevail")
+}
