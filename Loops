@@ -1,0 +1,58 @@
+Display the structure of logs. It appears to be a list of lists, interesting.
+Use list subsetting to print out the details component of the 11th element of logs.
+Use class() to print out the class of the timestamp component of the first entry of logs.
+
+# logs is already available in your workspace
+
+# Print the structure of logs
+str(logs)
+
+# Use list subsetting to print the details part of 11th logs entry
+logs[11]
+
+# Print the class of the timestamp component of the first entry
+class(logs[[1]]$timestamp)
+
+-----------------------------------------------------------------------------------------------------
+As a data scientist, suppose you want to know how many entries there were before the first failure message. One way to go about this is to write a simple while loop that goes through each log entry in logs, prints out the entry number, and stops when it sees the first failure message, that is, when the success element is FALSE. The last number printed to the console is the number of entries before the first failure message was logged.
+Start with defining an iterator, i, equal to 1, outside of the while loop.
+Inside the while loop's condition, check if the success element of logs[[i]] is TRUE.
+Inside the while loop's condition:
+First print out i and
+Next, increase i by 1. This is important!
+
+# logs is available in your workspace
+
+# Initialize the iterator i to be 1
+i=1
+
+# Code the while loop
+while ( logs[[i]]$success==TRUE ) {
+  print(i)
+  i=i+1
+}
+---------------------------------------------------------------------------------------------------------
+Initialize two variables: i, to 1 as before, and found, to FALSE.
+Write a while loop that:
+keeps running as long as found is FALSE.
+Checks if logs[[i]]$success is FALSE and logs[[i]]$details$location equals "waste". You'll need to use the && sign here. This causes the evaluation of the condition to halt as soon as the result of the condition is known; if logs[[i]]$success is TRUE, it's certain that the condition will be FALSE, so the next comparison is not evaluated anymore.
+prints out "found" and sets found to TRUE if the above condition holds.
+prints out "still looking" and increment i if the above condition does not hold.
+
+# logs is available in your workspace
+
+# Initialize i and found
+i <- 1
+found <- FALSE
+
+# Code the while loop
+while (found == FALSE) {
+  if (logs[[i]]$success == FALSE && logs[[i]]$details$location == "waste") {
+    print("found")
+    found = TRUE
+  } else {
+    print("still looking")
+    i=i+1
+  }
+}
+------------------------------------------------------------------------------------------------------------
