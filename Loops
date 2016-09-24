@@ -56,3 +56,48 @@ while (found == FALSE) {
   }
 }
 ------------------------------------------------------------------------------------------------------------
+Add an if statement such that the for loop only prints the timestamp if the log in question represents a success, i.e. if its success element is TRUE.
+# logs is available in your workspace
+
+# Make the printout conditional: only if success
+for (log in 1:length(logs)) {
+if(logs[[log]]$success == TRUE){
+    print(logs[[log]]$timestamp) 
+}
+   
+}
+------------------------------------------------------------------------------------------------------------
+Finish the for loop in the sample code; after running it, each entry in logs should contain a date element. This should b a Date object that you can build from the timestamp element with as.Date().
+Print the first 6 elements in logs by calling the head() function on logs. Is the date information in there now?
+
+# logs is available in your workspace
+
+# Finish the for loop: add date element for each entry
+for (i in 1:length(logs)) {
+  logs[[i]]$date <- as.Date(logs[[i]]$timestamp)
+}
+
+# Print first 6 elements in logs
+head(logs)
+
+--------------------------------------------------------------------------------------------------------------
+Initialize an empty list, failures using the list() function without arguments.
+Finish the for loop such that each log entry that indicates a failure is added to failures.
+Display the structure of the failures list that results.
+
+# logs is available in your workspace
+
+# Intialize empty list: failures
+failures <- list()
+
+# Finish the for loop: add each failure to failures
+for (i in 1:length(logs)) {
+  if (logs[[i]]$success == FALSE) {
+    failures <- c(failures, list(logs[[i]]))
+  }
+}
+
+# Display the structure of failures
+str(failures)
+
+----------------------------------------------------------------------------------------------------
