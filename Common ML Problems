@@ -1,0 +1,23 @@
+Classification
+Regression
+Clustering
+
+Classification: Predicts whetehr a given obs belongs to certain category
+ Earlier obs - > Estimate - > classifier ( Earlier obs can be estimated by classifier)
+ Classifier - > Unseen data -> class ( Classifier labels unseen data with a class)
+ 
+ Applications:
+ 1. Animal recognition
+ 2. Medical Diagnosis
+ 3. Foetus gender recognition
+ 
+ Importatnt: 
+ Qualitative Output
+ Predefined Classes
+ 
+ -------------------------------------------------------------------------
+ Regression: Predict continous or for i/p based on prev values. The i/p var are called predictors and the o/p var are called response
+ Reg is similar to classification where we estimate a function that maps i/p to o/p based on early obs.
+ 
+ Difference b/w classification and regression is that we estimate val in reg and not based on class obs as in classification
+ 
