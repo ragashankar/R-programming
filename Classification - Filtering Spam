@@ -1,0 +1,38 @@
+Filtering spam from relevant emails is a typical machine learning task. Information such as word frequency, character frequency and the amount of capital letters can indicate whether an email is spam or not.
+
+In the following exercise you'll work with the dataset emails, which is loaded in your workspace (Source: UCI Machine Learning Repository). Here, several emails have been labeled by humans as spam (1) or not spam (0) and the results are found in the column spam. The considered feature in emails to predict whether it was spam or not is avg_capital_seq. It is the average amount of sequential capital letters found in each email.
+
+In the code, you'll find a crude spam filter we built for you, spam_classifier() that uses avg_capital_seq to predict whether an email is spam or not. In the function definition, it's important to realize that x refers to avg_capital_seq. So where the avg_capital_seq is greater than 4, spam_classifier() predicts the email is spam (1), if avg_capital_seq is inclusively between 3 and 4, it predicts not spam (0), and so on. This classifier's methodology of predicting whether an email is spam or not seems pretty random, but let's see how it does anyways!
+
+Your job is to inspect the emails dataset, apply spam_classifier to it, and compare the predicted labels with the true labels. If you want to play some more with the emails dataset, you can download it here. And if you want to learn more about writing functions, consider taking the Writing Functions in R course taught by Hadley and Charlotte Wickham.
+
+Instructions
+Check the dimensions of this dataset. Use dim().
+Inspect the definition of spam_classifier(). It's a simple set of statements that decide between spam and no spam based on a single input vector.
+Pass the avg_capital_seq column of emails to spam_classifier() to determine which emails are spam and which aren't. Assign the resulting outcomes to spam_pred.
+Compare the vector with your predictions, spam_pred, to the true spam labels in emails$spam with the == operator. Simply print out the result. This can be done in one line of code! How many of the emails were correctly classified?
+
+Solution:
+
+# The emails dataset is already loaded into your workspace
+
+# Show the dimensions of emails
+dim(emails)
+
+# Inspect definition of spam_classifier()
+spam_classifier <- function(x){
+  prediction <- rep(NA, length(x)) # initialize prediction vector
+  prediction[x > 4] <- 1
+  prediction[x >= 3 & x <= 4] <- 0
+  prediction[x >= 2.2 & x < 3] <- 1
+  prediction[x >= 1.4 & x < 2.2] <- 0
+  prediction[x > 1.25 & x < 1.4] <- 1
+  prediction[x <= 1.25] <- 0
+  return(prediction) # prediction is either 0 or 1
+}
+
+# Apply the classifier to the avg_capital_seq column: spam_pred
+
+spam_pred <- spam_classifier(emails$avg_capital_seq)
+# Compare spam_pred to emails$spam. Use ==
+spam_pred == emails$spam
