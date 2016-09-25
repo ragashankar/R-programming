@@ -1,0 +1,29 @@
+In this exercise, you will group cars based on their horsepower and their weight. You can find the types of car and corresponding attributes in the cars data frame, which has been derived from the mtcars dataset. It's available in your workspace.
+
+To cluster the different observations, you will once again use kmeans().
+
+In short, your job is to cluster the cars in 2 groups, but don't forget to explore the dataset first!
+
+Instructions
+Explore the dataset using str() and summary().
+Use kmeans() with two arguments to group the cars into two clusters based on the contents of the cars data frame. Assign the result to km_cars.
+Print out the cluster element of km_cars; it shows which cars belong to which clusters.
+
+
+Solution:
+
+# The cars data frame is pre-loaded
+
+# Set random seed. Don't remove this line.
+set.seed(1)
+
+# Explore the cars dataset
+
+str(cars)
+summary(cars)
+
+# Group the dataset into two clusters: km_cars
+km_cars <- kmeans(cars,2)
+
+# Print out the contents of each cluster
+print(km_cars)
