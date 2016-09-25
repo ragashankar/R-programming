@@ -27,3 +27,33 @@ km_cars <- kmeans(cars,2)
 
 # Print out the contents of each cluster
 print(km_cars)
+----------------------------------------------------------------------------------------------------------------------------------------
+In the previous exercise, you grouped the cars based on their horsepower and their weight. Now let's have a look at the outcome!
+
+An important part in machine learning is understanding your results. In the case of clustering, visualization is key to interpretation! One way to achieve this is by plotting the features of the cars and coloring the points based on their corresponding cluster.
+
+In this exercise you'll summarize your results in a comprehensive figure. The dataset cars is already available in your workspace; the code to perform the clustering is already available.
+
+Instructions
+Finish the plot() command by coloring the cars based on their cluster. Do this by setting the col argument to the cluster partitioning vector: km_cars$cluster.
+Print out the clusters' centroids, which are kind of like the centers of each cluster. They can be found in the centers element of km_cars.
+Replace the ___ in points() with the clusters' centroids. This will add the centroids to your earlier plot. To learn about the other parameters that have been defined for you, have a look at the graphical parameters documentation.
+
+Solution:
+
+# The cars data frame is pre-loaded
+
+# Set random seed. Don't remove this line
+set.seed(1)
+
+# Group the dataset into two clusters: km_cars
+km_cars <- kmeans(cars, 2)
+
+# Add code: color the points in the plot based on the clusters
+plot(cars,col=km_cars$cluster)
+
+# Print out the cluster centroids
+km_cars$centers
+
+# Replace the ___ part: add the centroids to the plot
+points(km_cars$centers, pch = 22, bg = c(1, 2), cex = 2)
