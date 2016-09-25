@@ -1,0 +1,30 @@
+Last but not least, there's clustering. This technique tries to group your objects. It does this without any prior knowledge of what these groups could or should look like. For clustering, the concepts of prior knowledge and unseen observations are less meaningful than for classification and regression.
+
+In this exercise, you'll group irises in 3 distinct clusters, based on several flower characteristics in the iris dataset. It has already been chopped up in a data frame my_iris and a vector species, as shown in the sample code on the right.
+
+The clustering itself will be done with the kmeans() function. How the algorithm actually works, will be explained in the last chapter. For now, just try it out to gain some intuition!
+
+Note: In problems that have a random aspect (like this problem with kmeans()), the set.seed() function will be used to enforce reproducibility. If you fix the seed, the random numbers that are generated (e.g. in kmeans()) are always the same.
+
+Instructions
+Use the kmeans() function. The first argument is my_iris; the second argument is 3, as you want to find three clusters in my_iris. Assign the result to a new variable, kmeans_iris.
+The actual species of the observations is stored in species. Use table() to compare it to the groups that the clustering came up with. These groups can be found in the cluster attribute of kmeans_iris.
+Inspect the code that generates a plot of Petal.Length against Petal.Width and colors by cluster.
+
+Solution:
+
+# Set random seed. Don't remove this line.
+set.seed(1)
+
+# Chop up iris in my_iris and species
+my_iris <- iris[-5]
+species <- iris$Species
+
+# Perform k-means clustering on my_iris: kmeans_iris
+kmeans_iris <- kmeans(my_iris,3)
+
+# Compare the actual Species to the clustering using table()
+
+table(species,kmeans_iris$cluster)
+# Plot Petal.Width against Petal.Length, coloring by cluster
+plot(Petal.Length ~ Petal.Width, data = my_iris, col = kmeans_iris$cluster)
