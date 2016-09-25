@@ -1,0 +1,19 @@
+Supervised learning - Used to assign class or varaibles to unseen observations, given a set of labeled observations.
+Eg: classification, regression
+
+Unsupervised learning - Does not require specific labeled obs
+Eg: clustering
+
+Performance of model :
+
+Supervised Learning - Compare real labels with predicted labels, predictions should be similar to real labels
+
+Unsupervised Learning - No real labels to compare.
+
+
+Semi supervised learning:
+1. A lot of unlabeled obs
+2. A few labled
+3. Group similar obs using clustering
+4. use clustering info and classes of unlabelled obs  to assign a class to unlabelled observations.
+5. More labled obs for supervised learning

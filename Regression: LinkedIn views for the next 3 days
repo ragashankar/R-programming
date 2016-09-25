@@ -1,0 +1,22 @@
+It's time for you to make another prediction with regression! More precisely, you'll analyze the number of views of your LinkedIn profile. With your growing network and your data science skills improving daily, you wonder if you can predict how often your profile will be visited in the future based on the number of days it's been since you created your LinkedIn account.
+
+Create a vector days with the numbers from 1 to 21, which represent the previous 3 weeks of your linkedin views. You can use the seq() function, or simply :.
+Fit a linear model that explains the LinkedIn views. Use the lm() function such that linkedin ( number of views) is a function of days (number of days since you made your account). As an example, lm(y ~ x) builds a linear model such that y is a function of x, or more colloquially, y is based on x. Assign the resulting linear model to linkedin_lm.
+Using this linear model, predict the number of views for the next three days (days 22, 23 and 24). Use predict() and the predefined future_days data frame. Assign the result to linkedin_pred.
+See how the remaining code plots both the historical data and the predictions. Try to interpret the result.
+
+# linkedin is already available in your workspace
+
+# Create the days vector
+days <- 1:21
+
+# Fit a linear model called on the linkedin views per day: linkedin_lm
+linkedin_lm <- lm(linkedin ~ days)
+
+# Predict the number of views for the next three days: linkedin_pred
+future_days <- data.frame(days = 22:24)
+linkedin_pred <- predict(linkedin_lm,future_days)
+
+# Plot historical data and predictions
+plot(linkedin ~ days, xlim = c(1, 24))
+points(22:24, linkedin_pred, col = "green")

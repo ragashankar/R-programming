@@ -1,0 +1,24 @@
+Let's get down to a bit of coding! Your task is to examine this course's first prediction model. You'll be working with the Wage dataset. It contains the wage and some general information for workers in the mid-Atlantic region of the US.
+
+As we briefly discussed in the video, there could be a relationship between a worker's age and his wage. Older workers tend to have more experience on average than their younger counterparts, hence you could expect an increasing trend in wage as workers age. So we built a linear regression model for you, using lm(): lm_wage. This model predicts the wage of a worker based only on the worker's age.
+
+With this linear model lm_wage, which is built with data that contain information on workers' age and their corresponding wage, you can predict the wage of a worker given the age of that worker. For example, suppose you want to predict the wage of a 60 year old worker. You can use the predict() function for this. This generic function takes a model as the first argument. The second argument should be some unseen observations as a data frame. predict() is then able to predict outcomes for these observations.
+
+Note: At this point, the workings of lm() are not important, you'll get a more comprehensive overview of regression in chapter 4.
+
+Instructions
+Take a look at the code that builds lm_wage, which models the wage by the age variable.
+See how the data frame unseen is created with a single column, age, containing a single value, 60.
+Predict the average wage at age 60 using predict(): you have to pass the arguments lm_wage and unseen. Print the result of your function call to the console (don't assign it to a variable). Can you interpret the result?
+
+Solution:
+# The Wage dataset is available
+
+# Build Linear Model: lm_wage (coded already)
+lm_wage <- lm(wage ~ age, data = Wage)
+
+# Define data.frame: unseen (coded already)
+unseen <- data.frame(age = 60)
+
+# Predict the wage for a 60-year old worker
+predict(lm_wage,unseen)

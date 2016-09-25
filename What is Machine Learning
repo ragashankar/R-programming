@@ -1,0 +1,44 @@
+Machine learning explores the construct/ use of algorithms that learn from data
+Ability to do high performance when recieveing more information - Based on previous observations of how particular problems were solved bfore
+
+
+What is NOT Machine learning:
+Cal no. of occurances or average of size
+
+What is machine Learning?
+Build a model that can help make predictions of your data or future instances of similar problems.
+
+Uses:
+Shopping basket Analysis
+Movie recommendations systems
+Decision making for self driving cars
+---------------------------------------------------------------------------------------------------------------------------------------
+# iris is available from the datasets package
+
+# Reveal number of observations and variables in two different ways
+str(iris)
+dim(iris)
+
+# Show first and last observations in the iris data set
+head(iris,1)
+tail(iris,1)
+
+
+# Summarize the iris data set
+summary(iris)
+---------------------------------------------------------------------------------------------------------------------------------------
+Part of excelling at machine learning is knowing when you're dealing with a machine learning problem in the first place. Machine learning is more than simply computing averages or performing some data manipulation. It actually involves making predictions about observations based on previous information.
+
+Which of the following statements uses a machine learning model?
+
+(1) Determine whether an incoming email is spam or not. (2) Obtain the name of last year's Giro d'Italia champion. (3) Automatically tagging your new Facebook photos. (4) Select the student with the highest grade on a statistics course.
+A: 1 & 3
+
+Not sure whether you got the difference between basic data manipulation and machine learning? Have a look at the statements below and identify the one which is NOT a machine learning problem.
+
+Given a viewer's shopping habits, recommend a product to purchase the next time she visits your website. 1
+Given the symptoms of a patient, identify her illness. 2
+Predict the USD/EUR exchange rate for February 2016. 3
+Compute the mean wage of 10 employees for your company. - Ans
+
+

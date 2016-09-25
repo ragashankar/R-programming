@@ -1,0 +1,30 @@
+Previously, you used kmeans() to perform clustering on the iris dataset. Remember that you created your own copy of the dataset, and dropped the Species attribute? That's right, you removed the labels of the observations.
+
+In this exercise, you will use the same dataset. But instead of dropping the Species labels, you will use them do some supervised learning using recursive partitioning! Don't worry if you don't know what that is yet. Recursive partitioning (a.k.a. decision trees) will be explained in Chapter 3.
+
+Instructions
+Take a look at the iris dataset, using str() and summary().
+The code that builds a supervised learning model with the rpart() function from the rpart package is already provided for you. This model trains a decision tree on the iris dataset.
+Use the predict() function with the tree model as the first argument. The second argument should be a data frame containing observations of which you want to predict the label. In this case, you can use the predefined unseen data frame. The third argument should be type = "class". Simply print out the result of this prediction step.
+
+Solution:
+
+# Set random seed. Don't remove this line.
+set.seed(1)
+
+# Take a look at the iris dataset
+str(iris)
+summary(iris)
+
+# A decision tree model has been built for you
+tree <- rpart(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width,
+              data = iris, method = "class")
+
+# A dataframe containing unseen observations
+unseen <- data.frame(Sepal.Length = c(5.3, 7.2),
+                     Sepal.Width = c(2.9, 3.9),
+                     Petal.Length = c(1.7, 5.4),
+                     Petal.Width = c(0.8, 2.3))
+
+# Predict the label of the unseen observations. Print out the result.
+predict(tree,unseen,type="class")
