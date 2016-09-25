@@ -15,9 +15,40 @@ Classification: Predicts whetehr a given obs belongs to certain category
  Qualitative Output
  Predefined Classes
  
- -------------------------------------------------------------------------
+ Example: Animal Recognition - Suppose, I come across an animal whuch has two long ears, long mouth and brays loudly, I analyse it and create a class called Donkey under which I put this data. After sometime, if i come across similar kind of recognition for an animal, I dont have to analyse it again, i can directly classify it under donkey based on my early observations through classifier. This is called
+ classification.
+ ----------------------------------------------------------------------------------------------------------------------------------
  Regression: Predict continous or for i/p based on prev values. The i/p var are called predictors and the o/p var are called response
  Reg is similar to classification where we estimate a function that maps i/p to o/p based on early obs.
  
  Difference b/w classification and regression is that we estimate val in reg and not based on class obs as in classification
  
+ Example: For a given data set that contains height and weight of the people, we can find thro regression that:
+ Is the Relationships between Height and weight?
+ Is it Linear?
+ Can we predict weight based on height?
+ 
+ Its like fitting a linear function : Height = (b0 + b1) * Weight , where b0 and b1 are the parameters/ modular coefficients
+ Solving ML problem based on finding good values for b0 and b1.
+ 
+ lm(response ~ predictors)
+ 
+ Uses: (Reg is based on values and not just class)
+ Predicitng about landing job based on Grades.
+ Predciting Credit scores based on payments
+ 
+ Important:
+ Quantitative Output
+ Previous input - output obs.
+ ---------------------------------------------------------------------------------------------------------------------------------
+ Clustering:
+ Grouping of objs that are similar within cluster
+ Dissimilar between clusters
+ 
+ 1. No labels
+ 
+ 2. No right or wrong
+ 
+ 3. Plenty possible clustering
+ 
+ k-means : Cluster data in k clusters based on some similarity measure
