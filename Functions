@@ -1,0 +1,41 @@
+ add2 <- function(x,y){
++     x+y
++ }
+> add2(3,5)
+[1] 8
+> above10 <- function(x){
++     use <- x > 10
++     x[use]
++ }
+> above10(3)
+numeric(0)
+> above10(11)
+[1] 11
+> above10(10)
+numeric(0)
+> above10(100)
+[1] 100
+> above10(100)
+[1] 100
+> above <- function(x,n){
++     use <- x > n
++     x[use]
++ }
+> above(3,4)
+numeric(0)
+> above(5,4)
+[1] 5
+> above(10,4)
+[1] 10
+> above(c(56,78,99,344),45)
+[1]  56  78  99 344
+> above(c(56,78,99,344),100)
+[1] 344
+> above10 <- function(x,n=10){
++     use <- x > n
++     x[use]
++ }
+> above10(3)
+numeric(0)
+> above10(78)
+[1] 78
