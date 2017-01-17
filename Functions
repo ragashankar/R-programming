@@ -39,3 +39,13 @@ numeric(0)
 numeric(0)
 > above10(78)
 [1] 78
+------------------------------------------------------
+> colMeans
+function(y){
+    i <- ncol(y)
+    means <- numeric(i)
+    for (j in 1:i){
+        means[j] <- mean(y[,j])
+}
+means
+}
