@@ -49,3 +49,15 @@ function(y){
 }
 means
 }
+------------------------------------------------
+                                              LAZY EVALUATION
+ fn <- function(a){
++     a^2
++     a+9
++ }
+> fn(4)
+[1] 13 (returns the result of the last operation in the function)
+
+----------------------------------------------------
+                                                   '...' Argument
+'...' is indicated when other parameters are take as default. 
