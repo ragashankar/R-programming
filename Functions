@@ -61,3 +61,37 @@ means
 ----------------------------------------------------
                                                    '...' Argument
 '...' is indicated when other parameters are take as default. 
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                   Scoping in R
+If a func 'lm' is defined in global env, then R takes this s a func and not linera model fn .
+uses lexical scoping or static scoping - example:
+
+a=1
+b=2
+f<-function(x)
+{
+  a*x + b
+}
+g<-function(x)
+{
+  a=2
+  b=1
+  f(x)
+}
+g(2)
+
+g is called outside the functions, a=1 and b=2 are defined globally, so it takes a as 1 and b as 2. This is leical scoping
+
+Rules for lexical scoping:
+If a value present in the fn is not found under that enviro, then R searches parent environ until its hits empty. the error is thrown
+
+---------------------------------------------------scoping------------------------------------------------------------------
+> make.power <- function(x){
++     pow <- function(n){
++         n^x
++ }
++ pow
++ }
+c <- make.power(4)
+c(2)
+> 16
