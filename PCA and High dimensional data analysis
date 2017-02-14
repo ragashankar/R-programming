@@ -1,0 +1,103 @@
+-------------------------------------------------------Distance----------------------------------------------------------------------------
+library(devtools)
+install_github("genomicsclass/tissuesGeneExpression")
+
+library(tissuesGeneExpression)
+data(tissuesGeneExpression)
+head(e)
+head(tissue)
+
+
+#1 Hippopotamus replicates
+table(tissue)
+
+#2 dist b/w sample 3 and 45
+
+sqrt(sum((e[,3] - e[,45])^2))
+
+#3 What is the distance between gene 210486_at and 200805_at
+
+sqrt(sum(()))
+
+class(e)
+
+e1 <- data.frame(t(e))
+
+sqrt(sum((e1$X210486_at - e1$X200805_at)^2))
+
+str(t(d))
+
+17766*189
+
+#4 rows*columns
+d1 <- as.matrix((e))
+22215*22215
+
+#5 dist
+d <- dist(t(e))
+length(d)
+
+----------------------------------------------------------Singular value Decompositition-----------------------------------------------
+Singluar value decomposititon (SVD)
+
+For matrix Y of m * n , we can write as,
+
+transponse(U)Y = D(transpose(V))
+
+where U = m * p orthogonal matrix
+V  = n * p orthogonal matrix
+D = n * p diagonal matrix
+p = min(m,n)
+
+Sum of squares of the cols VD and UD are decreasing
+
+More common formula: Y UD*transpose(V)
+
+
+library(tissuesGeneExpression)
+data(tissuesGeneExpression)
+
+dim(e)
+
+#Standardize the data e
+Y <- t(apply(e,1,scale))
+
+library(base)
+s <- svd(Y)
+
+U <- s$u
+V <- s$v
+D <- diag(s$d)
+
+Yhat <- U %*% D %*% t(V)
+
+resid <- Y - Yhat
+
+max(abs(resid)) # Max error is very small
+
+## To get rid of some columns in e which of which the diags are close to zero
+
+plot(s$d) # we see that there are points which are close to 0. We can remove that
+
+# Lets say we remove only 4 cols and see what happens
+
+k <- ncol(U) - 4
+Yhat <- U[,1:k] %*% D[1:k,1:k] %*% t(V[,1:k])
+
+resid <- Y - Yhat
+max(abs(resid))
+
+plot(s$d^2/sum(s$d^2) * 100) # explains that upto 10 columns variablity is there(20%), remaining is close to 0
+
+# Now lets remove half of the columns from data
+
+k <- ncol(U) - 95
+Yhat <- U[,1:k] %*% D[1:k,1:k] %*% t(V[,1:k])
+
+resid <- Y - Yhat
+max(abs(resid))
+
+# To compute the accuracy after removing cols
+sum(s$d[1:k]^2)/sum(s$d^2)
+
+
